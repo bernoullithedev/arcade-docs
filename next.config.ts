@@ -23,6 +23,25 @@ const nextConfig: NextConfig = withLlmsTxt({
   withNextra({
     async redirects() {
       return [
+        // Auto-added redirects for deleted pages
+        {
+          source: "/:locale/references/mcp/python/transports",
+          destination: "/:locale/references/mcp/python",
+          permanent: true,
+        },
+        {
+          source: "/:locale/references/mcp/python/types",
+          destination: "/:locale/references/mcp/python",
+          permanent: true,
+        },
+        // CrewAI custom auth flow redirect to use-arcade-tools
+        {
+          source:
+            "/:locale/get-started/agent-frameworks/crewai/custom-auth-flow",
+          destination:
+            "/:locale/get-started/agent-frameworks/crewai/use-arcade-tools",
+          permanent: true,
+        },
         // "others" category removed — toolkits moved to proper categories
         {
           source: "/:locale/resources/integrations/others/:path*",
@@ -516,7 +535,7 @@ const nextConfig: NextConfig = withLlmsTxt({
         {
           source: "/:locale/home/crewai/custom-auth-flow",
           destination:
-            "/:locale/get-started/agent-frameworks/crewai/custom-auth-flow",
+            "/:locale/get-started/agent-frameworks/crewai/use-arcade-tools",
           permanent: true,
         },
         {
